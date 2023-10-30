@@ -11,12 +11,14 @@ public class ExampleMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 
+	public static final Item SWAG_BUCKS = new Item(new FabricItemSettings());
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
+		Registry.register(Registries.ITEM, new Identifier("tutorial", "custom_item"), SWAG_BUCKS);
 		LOGGER.info("Hello Fabric world!");
 	}
 }
